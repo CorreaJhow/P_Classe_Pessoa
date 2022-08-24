@@ -10,44 +10,70 @@ namespace PClasse_Pessoa
     {
         String nome, cpf, dataNascimento, telefone;
 
-        public void setNome(String nome)
+
+        public Pessoa()
         {
-            this.nome = nome;
+
+        }
+        public void setNome()
+        {
+            Console.WriteLine("Insira um nome: ");
+            this.nome = Console.ReadLine();
         }
 
-        public void setData(String dataNascimento)
+        public void setData()
         {
-            this.dataNascimento = dataNascimento;
+            Console.WriteLine("Insira uma Data (no modelo dia/mes/ano): ");
+            this.dataNascimento = Console.ReadLine();
         }
 
-        public void setDocumento(String cpf)
+        public void setDocumento()
         {
-            this.cpf = cpf;
+            Console.Write("Informe a o cpf da primeira pessoa (seguindo o modelo 'XXX.XXX.XXX-XX'): ");
+            this.cpf = (Console.ReadLine());
         }
 
-        public void setTelefone(String telefone)
+        public void setTelefone()
         {
-            this.telefone = telefone;
+            Console.WriteLine(this.nome + ", por favor informe o seu telefone: ");
+            this.telefone = (Console.ReadLine());
         }
 
-        public String getNome()
+        public void getNome()
         {
-            return nome;
+            Console.WriteLine("O nome informado foi: " + this.nome);
         }
 
-        public String getData()
+        public void getData()
         {
-            return dataNascimento;
+            Console.WriteLine("A data de nascimento informada por " + this.nome + " informada foi: " + this.dataNascimento);
         }
 
-        public String getDocumento()
+        public void getDocumento()
         {
-            return cpf;
+            Console.WriteLine("o cpf de" + this.nome + " é correspondete a " + this.cpf);
         }
 
-        public String getTelefone()
+        public void getTelefone()
         {
-            return telefone;
+            Console.WriteLine("O telefone do " + this.nome + " é equivalente a " + this.telefone);
+        }
+
+        public void RealizarCadastro()
+        {
+            setNome();
+            setData();
+            setDocumento();
+            setTelefone();
+        }
+
+        public void ImprimirCadastro()
+        {
+            getNome();
+            getData();
+            getDocumento();
+            getTelefone();
+
         }
     }
 }
